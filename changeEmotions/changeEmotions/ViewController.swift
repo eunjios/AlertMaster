@@ -17,8 +17,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        emotionLabel.text = "\(a)!!"
-        emotionImage.image = UIImage(named: "\(a).jpg")
+        changeEmotions()
     }
     
     
@@ -30,9 +29,18 @@ class ViewController: UIViewController {
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
         
-        (a, b) = (b, a)
+        toggle()
+        changeEmotions()
+        
+    }
+    
+    func changeEmotions() {
         emotionLabel.text = "\(a)!!"
         emotionImage.image = UIImage(named: "\(a).jpg")
+    }
+    
+    func toggle() {
+        (a, b) = (b, a)
     }
     
 }
