@@ -2,8 +2,8 @@
 * alert 창 만드는 것을 연습할 예정입니다. 
 * `UIAlertController`, `UIAlertAction`, `alert.addAction`, `present` 와 같은 문법을 사용해 봅니다.
 <br/><br/>
----
-## changeEmotions
+
+## 1. changeEmotions
 ![](https://miro.medium.com/max/2000/1*pZb_vlkGrjkAlYqMpvWR_Q.png)
 사용자가  `You can change` 버튼을 누르면 Memoji 표정이 바뀝니다. Memoji의 표정은 `happy`와 `angry` 두 가지 입니다.
 
@@ -14,4 +14,4 @@
 * `UIAlertController`의 `style: .alert`
 * `UIAlertAction`의 `style: .default, handler: .nil` 
 <br/><br/>
----
+
