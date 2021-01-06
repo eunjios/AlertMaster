@@ -22,16 +22,17 @@ class ViewController: UIViewController {
     
     
     @IBAction func showAlert(_ sender: Any) {
-        let message = "기분이 '\(a)' 에서 '\(b)' 로 바뀌었습니다."
+        let message = "기분을 '\(a)' 에서 '\(b)' 로 바꾸시겠습니까?"
         
         let alert = UIAlertController(title: "Change", message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        let action = UIAlertAction(title: "확인", style: .default, handler: { action in
+            self.toggle()
+            self.changeEmotions()
+        })
+        alert.addAction(cancel)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
-        
-        toggle()
-        changeEmotions()
-        
     }
     
     func changeEmotions() {
