@@ -8,43 +8,64 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var is1Pass: Bool = true
+    var is2Pass: Bool = false
     
-    var user1: String = "내기 당첨!"
-    var user2: String = "내기 통과!"
-    var emoji1 = "💣"
-    var emoji2 = "🎉"
+    var alrtTitle: String = "title"
+    var alrtMessage: String = "message"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        random()
+        is1Pass = isPass()
     }
 
     @IBAction func button1(_ sender: Any) {
-        let alert = UIAlertController(title: "\(emoji1)", message: "\(user1)", preferredStyle: .alert)
+        alrtTitle = titleString(is1Pass)
+        alrtMessage = messageString(is1Pass)
+        
+        let alert = UIAlertController(title: "\(alrtTitle)", message: "\(alrtMessage)", preferredStyle: .alert)
         let action = UIAlertAction(title: "확인", style: .default, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }
     
     @IBAction func button2(_ sender: Any) {
-        let alert = UIAlertController(title: "\(emoji2)", message: "\(user2)", preferredStyle: .alert)
+        alrtTitle = titleString(is2Pass)
+        alrtMessage = messageString(is2Pass)
+        let alert = UIAlertController(title: "\(alrtTitle)", message: "\(alrtMessage)", preferredStyle: .alert)
         let action = UIAlertAction(title: "확인", style: .default, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }
 
     
-    func random() {
+    func isPass() -> Bool {
         let randomNum = Int(arc4random_uniform(1000))
-        let is1Pass = Bool(randomNum%2 == 0)
-    
-        if is1Pass {
-            user1 = "내기 통과!"
-            user2 = "내기 당첨!"
-            emoji1 = "🎉"
-            emoji2 = "💣"
-        }
+        let is1Pass: Bool = randomNum % 2 == 0
+        return is1Pass
     }
+    
+    func titleString(_ isPass: Bool) -> String {
+        var title = "title"
+
+        if isPass {
+            title = "🎉"
+        } else {
+            title = "💣"
+        }
+        return title
+    }
+    
+    func messageString(_ isPass: Bool) -> String {
+        var message = "message"
+        
+        if isPass {
+            message = "내기 통과!"
+        } else {
+            message = "내기 당첨!"
+        }
+        return message
+    }
+        
 }
 
