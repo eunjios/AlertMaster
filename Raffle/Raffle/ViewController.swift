@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         is1Pass = isPass()
+        is2Pass = !is1Pass
     }
 
     @IBAction func button1(_ sender: Any) {

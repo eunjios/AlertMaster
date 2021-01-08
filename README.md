@@ -21,4 +21,10 @@
 * `UIAlertAction` 을 두 번 사용하여 `action` 과 `cancel` 버튼을 두 개 생성합니다.
 * `UIAlertController`의 `style: .alert`
 * `UIAlertAction`의 `handler` 를 활용하여 `확인` 버튼을 눌렀을 때 `changeEmotions()` method 를 실행하도록 합니다.
+<br/><br/>
+
+## 2. Raffle
+랜덤으로 두 명 중 한 명은 `당첨`, 다른 한 명은 `통과`가 되도록 하는 제비뽑기 프로젝트 입니다. 당첨 여부는 `alert` 창으로 알려줍니다.
+![](https://miro.medium.com/max/2000/1*zf7cRUR7_OB5ONlcKPjR4Q.png)
+
 
