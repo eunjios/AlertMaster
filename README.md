@@ -1,4 +1,4 @@
-# Alert Master
+# Alert Practice
 * alert 창 만드는 것을 연습할 예정입니다. 
 * `UIAlertController`, `UIAlertAction`, `alert.addAction`, `present` 와 같은 문법을 사용해봅니다.
 <br/><br/>
